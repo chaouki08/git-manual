@@ -1,0 +1,75 @@
+<!doctype HTML>
+<html>
+    <head>
+        <title>Les différents moyens d'identifications des commits</title>
+        <meta charset="UTF-8">
+        <link href="../css/style.css" rel="stylesheet" type="text/css">
+		<link rel="icon" type="image/png" sizes="96x96" href="../images/favicon-96x96.png">
+    </head>
+
+    <body>
+        <div id="titre"> 
+            <h1> <a href="../index.html"> <img src="../images/logo.png" alt="logo" > </img> </a> <br>Les différents moyens d'identifications des commits</h1>
+        </div>
+        <div id="nav">
+                <nav>
+                    <ul>
+                        <li><a href="../index.html">Accueil</a></li>
+                    </ul>
+                </nav>
+        </div>
+        <div id="corps">
+        <section class="descriptif">
+                <h4>SHA</h4>
+			<p>Un Sha est une série de 40 chiffres héxadécimal généré à l'aide d'un algorithme dont le nom est SHA-1(pour <i>Secure Hash Algorithm</i>). Vous pouvez connaitre la SHA d'un commit en utilisant la commande <code><a href="./git_log.html">log</a></code>.</p>
+        </section>
+
+        <section class="affichage">
+            <h4>Exemple d'affichage d'un SHA</h4>
+						<p>Exemple d'un <code>log</code> d'un commit :</p>
+                        <div class="code">
+                            <code>commit 283081424dce5ea4a237bceedeb846d914ea8d2f<br>
+Author: Utilisateur <user@user.com><br>
+Date:   Thu Mar 12 08:42:17 2015 +0100<br>
+	Message de commit<br>
+	Commentaire sur le commit<br>
+						</code>
+                        </div>
+						<p>Le SHA est unique à un commit, il est formé grâce aux <i>méta-données</i> du commit, c'est-à-dire sa date, les informations de l'auteur, ainsi que le message de commit. Pour utilisez un SHA, vous n'êtes pas obliger de l'écrire entièrement, seule les quelques premiers chiffres devraient suffir si un autre commit ne les partagent pas dans votre projet.</p>
+<p>Il existe d'autres façons de référencé des commits.</p>
+        </section>
+		
+	<section class="descriptif">
+		<h4>Le nom d'une branche</h4>
+		<p>Une branche est une version divergente du projet, comme pour la branche master sur laquelle vous travaillez généralement, le nom d'une branche référence sur le dernier commit de cette branche (ainsi une branche peut référencé un commit du passé de la branche master).
+Pour plus d'informations sur les branches vous pouvez aller voir la commande <code><a href="branch.html"> branch</a></code>.</p>
+	</section>
+
+	<section class="affichage">
+		<h4>Exemple d'affichage des branches</h4>
+		<p>Exemple d'un <code>git branch -v</code> :</p>
+		<div class="code">
+			<code><p>* gh-pages 2830814 Merge pull request #74 from Iwantaponey/gh-pages</p>
+				<p>  master 2374582 Mise à jour de commandes.html</p>
+			</code>
+		</div>
+		<p>Ici, nous avons deux branches pointant sur des commits différents. Si l'on utilise l'identificateur <code>gh-pages</code> l'on parlera alors du commit <code>Merge pull request #74 from Iwantaponey/gh-pages</code> alors que <code>master</code> ferait référence au commit <code>Mise à jour de commandes.html</code></p>
+		<p>Pour plus d'informations sur les branches, n'hésitez pas à aller voir la page de la <a href="./branch.html">commande <code>branch</code></a></p>
+	</section>
+
+	<section class="descriptif">
+		<h4>D'autres moyens de référencé les commits</h4>
+		<ul>
+			<li><p>Les tag, vous pouvez en apprendre plus sur les tags <a href="./git_tag.html">ici</a>.</p></li>
+			<li>L'utilisation d'un sélécteur de parent : <code>^</code> ou <code>~</code> qui fait référence au commit précédent. Par exemple, <code>HEAD^</code> fait référence à l'avant dernier commit de la branche courante.</li>
+			<li>Une référence à partir d'une date à l'aide de <code>@</code> suivis de la date du commit.</li>
+			<li>Une référence sur le chemin du commit à l'aide de <code>:.</code></li>
+		</ul>
+	</section>
+
+
+    </div>
+    <footer>
+	    <p> © Groupe d'IN202 2014-2015 UVSQ - Par Damien Thenot</p>
+    </footer>
+
